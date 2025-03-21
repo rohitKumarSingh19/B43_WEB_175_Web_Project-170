@@ -7,6 +7,7 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import AdminDashboard from "./pages/AdminDashboard";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
@@ -53,7 +54,15 @@ function App() {
               <Login />
             )}
           />
-
+{/* ✅ Only Admins can access Admin Dashboard */}
+<Route
+            path="/admin"
+            element={isAuthenticated && role === "admin" ? (
+              <AdminDashboard />
+            ) : (
+              <Login />
+            )}
+          />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
         </Routes>

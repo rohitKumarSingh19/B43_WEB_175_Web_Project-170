@@ -34,7 +34,9 @@ function EventCreate() {
     try {
       await createEvent(eventData);
       alert("✅ Event Created Successfully!");
-      navigate("/"); // Redirect to Home page after event creation
+      //Notify AdminDashboard to refresh data
+      localStorage.setItem("eventCreated","true");
+      navigate("/admin"); // Redirect to Home page after event creation
     } catch (error) {
       alert(`❌ Failed to create event: ${error}`);
     }

@@ -19,16 +19,22 @@ function Login() {
       const data = await loginUser(userData);
       
       // Store token and role in localStorage
-      if (data.token) {
+      if (data.token && data.user.role) {
         localStorage.setItem("token", data.token);
         localStorage.setItem("role", data.user.role); // Store role
       }
 
       alert(`✅ Login Successful! Welcome, ${data.user.name}`);
-
-      // Redirect to home or previous location
+      //redirect user based on role
+      if(data.user.role==='organizer' || data.user.role==='admin'){
+        navigate("/create")//Redirect organizers/admins to create Event Page
+      }
+      else{
+        // Redirect to home or previous location
       const redirectPath = location.state?.from || "/";
       navigate(redirectPath);
+      }
+      
     } catch (error) {
       alert(`❌ Login Failed: ${error}`);
     }
