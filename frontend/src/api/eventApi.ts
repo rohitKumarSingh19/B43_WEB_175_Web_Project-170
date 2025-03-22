@@ -40,3 +40,14 @@ export const getEvents = async () => {
     throw handleAxiosError(error);
   }
 };
+//Fetch Upcoming events with filters
+export const getUpcomingEvents = async (filters: { category?: string; eventType?: string }) => {
+  const response = await axios.get(`${API_URL}/upcoming`, { params: filters });
+  return response.data;
+};
+
+//Fetch past events with Filters
+export const getPastEvents = async (filters: { category?: string; eventType?: string }) => {
+  const response = await axios.get(`${API_URL}/past`, { params: filters });
+  return response.data;
+};

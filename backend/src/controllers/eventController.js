@@ -42,3 +42,33 @@ export const deleteEvent = async (req, res) => {
       res.status(500).json({ message: "Server Error" });
     }
   };
+  //Get upcoming events (Future Events)
+  export const getUpcomingEvents=async(req,res)=>{
+    try{
+        const {category,eventType}=req.query;
+        const query={
+            data:{$gt:new Date()},//event in futer
+        };
+        if(category) query.category=category;
+        if(eventType) query.eventType=eventType;
+        const events=await Event.find(query).sort({date:1});
+        res.json(events);
+    }catch(error){
+        res.status(500).json({message:"Server Error",error});
+    }
+  };
+  //Get past Events
+  export const getPastEvents=async(req,res)=>{
+    try{
+        const {category,eventType}=req.query;
+        const query={
+            date:{$lt:new Date()},//past events
+        }
+        if(category) query.category=category;
+        if(eventType) query.eventType=eventType;
+        const events=await Event.find(query).sort({date:-1});
+        res.json(events);
+    }catch(error){
+        res.status(500).json({message:'Server error',error});
+    }
+};

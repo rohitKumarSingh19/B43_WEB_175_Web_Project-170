@@ -20,6 +20,8 @@ const eventSchema = new mongoose.Schema(
     image: {
       type: String, //optional image url
     },
+    category:{type:String,enum:["Music","Tech","Sports","Business"],required:true},
+    eventType:{type:String,enum:["Public","Private"],default:"Public"},
     createdBy: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
     attendees: [
         {
