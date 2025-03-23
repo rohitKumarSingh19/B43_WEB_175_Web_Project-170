@@ -8,7 +8,8 @@ import eventRoutes from './src/routes/eventRoutes.js';
 import authRoutes from './src/routes/authRoutes.js';
 import adminRoutes from './src/routes/adminRoutes.js';
 import rsvpRoutes from "./src/routes/rsvpRoutes.js";
-import bannerRoutes from './src/routes/bannerRoutes.js'
+import bannerRoutes from './src/routes/bannerRoutes.js';
+import notificationRoutes from "./src/routes/notificationRoutes.js";
 dotenv.config();
 const app=express();
 app.use(cors());
@@ -24,6 +25,9 @@ app.use("/api/rsvp",rsvpRoutes);
 // ✅ Serve static images (for banners & uploads)
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/api/banner",bannerRoutes);
+
+// ✅ Mount the notifications API
+app.use("/api/notifications", notificationRoutes);
 connectDB();
 const PORT=process.env.PORT || 5000;
 app.listen(PORT,()=>{
