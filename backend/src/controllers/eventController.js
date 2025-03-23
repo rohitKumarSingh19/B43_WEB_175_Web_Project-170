@@ -2,7 +2,7 @@ import Event from '../models/Event.js';
 //Create Event
 export const createEvent=async(req,res)=>{
     try{
-        console.log("📥 Event Data Received:", req.body); // Debugging Log
+        //console.log("📥 Event Data Received:", req.body); // Debugging Log
         const {title,description,date,location,category,eventType}=req.body;
         if(!title || !description || !date || !location || !category || !eventType){
             console.log("❌ Missing Fields:", { title, description, date, location, category, eventType });

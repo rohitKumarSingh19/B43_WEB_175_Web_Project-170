@@ -30,6 +30,7 @@
 //         })
 //     }
 // }
+import Banner from '../models/bannerModel.js';
 export const getBanner = (req, res) => {
     try {
       const bannerData = {

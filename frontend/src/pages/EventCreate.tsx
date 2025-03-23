@@ -147,7 +147,7 @@ function EventCreate() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("📤 Sending Event Data:", eventData); // Debugging Log
+    //console.log("📤 Sending Event Data:", eventData); // Debugging Log
 
     try {
       const token = localStorage.getItem("token");
