@@ -8,7 +8,7 @@ import Login from "./pages/Login";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import AdminDashboard from "./pages/AdminDashboard";
-
+import Banner from './components/Banner';
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
   const [role, setRole] = useState<string | null>(null);
@@ -41,6 +41,8 @@ function App() {
   return (
     <Box display="flex" flexDirection="column" minHeight="100vh">
       <Header isAuthenticated={isAuthenticated} onLogout={handleLogout} />
+      {/* ✅ Banner Component (Only on Home Page) */}
+      <Banner />
       <Box flexGrow={1}>
         <Routes>
           <Route path="/" element={<Home />} />

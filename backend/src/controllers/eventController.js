@@ -2,16 +2,23 @@ import Event from '../models/Event.js';
 //Create Event
 export const createEvent=async(req,res)=>{
     try{
-        const {title,description,date,location}=req.body;
-        if(!title || !description || !date || !location){
+        console.log("📥 Event Data Received:", req.body); // Debugging Log
+        const {title,description,date,location,category,eventType}=req.body;
+        if(!title || !description || !date || !location || !category || !eventType){
+            console.log("❌ Missing Fields:", { title, description, date, location, category, eventType });
             return res.status(400).json({
                 message:'All fields are required'
             });
         }
-    const newEvent=new Event({title,description,date,location});
-    await newEvent.save();
+        if (!req.user) {
+            return res.status(401).json({ message: "Unauthorized: No user data found" });
+          }
+    const newEvent=await Event.create({title,description,date,location,category,eventType,createdBy:req.user.id});
+    console.log("✅ Event Created Successfully:", newEvent);
+    //await newEvent.save();
     res.status(201).json(newEvent);
     }catch(error){
+        console.error("❌ Error Creating Event:", error);
         res.status(500).json({
             message:'Error creating event',error
         })
