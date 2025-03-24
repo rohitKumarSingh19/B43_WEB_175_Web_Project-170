@@ -1,3 +1,5 @@
+stunning-phoenix-3cc455.netlify.app
+
 📅 Event Management Platform
 🚀 Built with React, Node.js, Express, MongoDB & TypeScript
 A fully-featured event management system with user authentication, role-based access control (RBAC), RSVP system, event notifications, reminders, and filtering.
