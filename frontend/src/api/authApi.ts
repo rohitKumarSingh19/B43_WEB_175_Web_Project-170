@@ -1,5 +1,5 @@
 import axios from "axios";
-const API_URL = "http://localhost:5000/api/auth";
+const API_URL = "https://event-management-xc6u.onrender.com/api/auth";
 // Error Handling Function
 const handleAxiosError = (error: unknown): string => {
   if (axios.isAxiosError(error) && error.response?.data?.message) {

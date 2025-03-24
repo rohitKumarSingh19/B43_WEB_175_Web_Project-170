@@ -1,6 +1,6 @@
 import axios from "axios"; // ❌ Removed { AxiosError }
 
-const API_URL = "http://localhost:5000/api/banner";
+const API_URL = "https://event-management-xc6u.onrender.com/api/banner";
 
 // ✅ Helper Function for Handling Errors
 const handleAxiosError = (error: unknown): string => {

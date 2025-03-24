@@ -1,6 +1,6 @@
 import axios from "axios"; // ✅ Removed AxiosError import
 
-const API_URL = "http://localhost:5000/api/rsvp";
+const API_URL = "https://event-management-xc6u.onrender.com/api/rsvp";
 
 // ✅ Helper function to handle Axios errors properly
 const handleAxiosError = (error: unknown): string => {

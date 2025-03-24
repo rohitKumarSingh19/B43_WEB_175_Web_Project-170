@@ -221,7 +221,7 @@ const Home = () => {
           </Typography>
           <Box sx={{ mt: 2 }}>
             <img
-              src={`http://localhost:5000${banner.image}`} // ✅ Ensure Correct Image Path
+              src={`https://event-management-xc6u.onrender.com${banner.image}`} // ✅ Ensure Correct Image Path
               alt="Event Banner"
               style={{
                 width: "100%",

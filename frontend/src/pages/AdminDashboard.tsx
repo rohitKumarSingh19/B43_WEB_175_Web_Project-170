@@ -44,8 +44,8 @@ function AdminDashboard() {
 
       // ✅ Fetch users & events from backend
       const [usersRes, eventsRes] = await Promise.all([
-        axios.get("http://localhost:5000/api/admin/users", { headers }),
-        axios.get("http://localhost:5000/api/admin/events", { headers }),
+        axios.get("https://event-management-xc6u.onrender.com/api/admin/users", { headers }),
+        axios.get("https://event-management-xc6u.onrender.com/api/admin/events", { headers }),
       ]);
 
       console.log("Users:", usersRes.data);

@@ -1,5 +1,5 @@
 import axios from "axios";
-const API_URL = "http://localhost:5000/api/notifications";
+const API_URL = "https://event-management-xc6u.onrender.com/api/notifications";
 // Get notifications
 export const getNotifications = async () => {
   const token = localStorage.getItem("token");

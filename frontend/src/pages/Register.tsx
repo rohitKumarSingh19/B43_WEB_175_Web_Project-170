@@ -39,8 +39,9 @@ import { registerUser } from "../api/authApi";
 import { TextField, Button, Container, Typography, Card, CardContent, Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
+
 function Register() {
-  const [userData, setUserData] = useState({ name: "", email: "", password: "" });
+  const [userData, setUserData] = useState({ name: "", email: "", password: "",role:"" });
   const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

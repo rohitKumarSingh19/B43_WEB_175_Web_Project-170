@@ -1,6 +1,6 @@
 import axios from "axios"; // Removed { AxiosError }
 
-const API_URL = "http://localhost:5000/api/events";
+const API_URL = "https://event-management-xc6u.onrender.com/api/events";
 
 // Helper function to get token from localStorage
 const getAuthHeader = () => {
