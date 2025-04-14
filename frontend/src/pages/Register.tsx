@@ -71,6 +71,8 @@ function Register() {
               <TextField fullWidth label="Name" name="name" onChange={handleChange} required margin="normal" />
               <TextField fullWidth label="Email" name="email" type="email" onChange={handleChange} required margin="normal" />
               <TextField fullWidth label="Password" type="password" name="password" onChange={handleChange} required margin="normal" />
+              <TextField fullWidth label="Role" name="role" onChange={handleChange} required margin="normal" />
+
               <Button type="submit" variant="contained" color="primary" fullWidth sx={{ marginTop: 2 }}>
                 Register
               </Button>
